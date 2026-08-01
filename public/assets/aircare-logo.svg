@@ -1,0 +1,32 @@
+<svg width="320" height="88" viewBox="0 0 320 88" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="aircare-logo-title">
+  <title id="aircare-logo-title">AirCare</title>
+  <defs>
+    <linearGradient id="aircare-mark-gradient" x1="16" y1="20" x2="122" y2="72" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#009BFF"/>
+      <stop offset="0.52" stop-color="#075FE4"/>
+      <stop offset="1" stop-color="#78D722"/>
+    </linearGradient>
+    <linearGradient id="aircare-type-gradient" x1="138" y1="24" x2="306" y2="62" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#075FE4"/>
+      <stop offset="0.5" stop-color="#078AF0"/>
+      <stop offset="1" stop-color="#6BCB22"/>
+    </linearGradient>
+  </defs>
+  <g stroke="url(#aircare-mark-gradient)" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 41L65 18L98 41"/>
+    <path d="M43 39V61H89V39"/>
+    <path d="M79 31L94 20L109 31V53"/>
+    <path d="M36 60C53 72 85 72 109 55"/>
+    <path d="M23 55C42 79 91 80 119 52"/>
+    <path d="M52 52C71 62 101 58 116 36"/>
+  </g>
+  <g fill="url(#aircare-mark-gradient)">
+    <rect x="55" y="39" width="8" height="8" rx="1.4"/>
+    <rect x="68" y="39" width="8" height="8" rx="1.4"/>
+    <rect x="55" y="52" width="8" height="8" rx="1.4"/>
+    <rect x="68" y="52" width="8" height="8" rx="1.4"/>
+    <path d="M110 21L113 28L120 31L113 34L110 41L107 34L100 31L107 28L110 21Z"/>
+    <path d="M125 33L127 38L132 40L127 42L125 47L123 42L118 40L123 38L125 33Z"/>
+  </g>
+  <text x="136" y="60" fill="url(#aircare-type-gradient)" font-family="Pretendard, 'Noto Sans KR', Arial, sans-serif" font-size="47" font-style="italic" font-weight="900" letter-spacing="-2.2">AirCare</text>
+</svg>
