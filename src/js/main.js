@@ -5,6 +5,52 @@ const calculator = document.querySelector("[data-calculator]");
 const bookingModal = document.querySelector("[data-booking-modal]");
 const contactSection = document.querySelector("#contact");
 
+class AirCareLogo extends HTMLElement {
+  static get observedAttributes() {
+    return ["variant", "size", "show-text"];
+  }
+
+  connectedCallback() {
+    this.render();
+  }
+
+  attributeChangedCallback() {
+    if (this.isConnected) this.render();
+  }
+
+  render() {
+    const variant = this.getAttribute("variant") || "default";
+    const size = this.getAttribute("size") || "md";
+    const showText = this.getAttribute("show-text") !== "false";
+    const sizes = {
+      sm: { width: showText ? 168 : 56, height: 52 },
+      md: { width: showText ? 218 : 64, height: 62 },
+      lg: { width: showText ? 250 : 72, height: 72 }
+    };
+    const box = sizes[size] || sizes.md;
+
+    this.shadowRoot?.replaceChildren();
+    const root = this.shadowRoot || this.attachShadow({ mode: "open" });
+    root.innerHTML = `
+      <style>
+        :host { display: inline-block; width: ${box.width}px; height: ${box.height}px; line-height: 0; }
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center 52%;
+        }
+      </style>
+      <img src="public/assets/aircare-logo-original.png" alt="AirCare">
+    `;
+  }
+}
+
+if (!customElements.get("aircare-logo")) {
+  customElements.define("aircare-logo", AirCareLogo);
+}
+
 function closeMobileNav() {
   if (!nav || !navToggle) return;
   nav.classList.remove("is-open");
