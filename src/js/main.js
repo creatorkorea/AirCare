@@ -3,6 +3,7 @@ const nav = document.querySelector("[data-nav]");
 const faqButtons = document.querySelectorAll(".faq-item button");
 const calculator = document.querySelector("[data-calculator]");
 const bookingModal = document.querySelector("[data-booking-modal]");
+const contactSection = document.querySelector("#contact");
 
 function closeMobileNav() {
   if (!nav || !navToggle) return;
@@ -27,7 +28,7 @@ faqButtons.forEach((button) => {
     const item = button.closest(".faq-item");
     const isOpen = item.classList.toggle("is-open");
     button.setAttribute("aria-expanded", String(isOpen));
-    button.querySelector("span").textContent = isOpen ? "−" : "+";
+    button.querySelector(".faq-toggle").textContent = isOpen ? "−" : "+";
   });
 });
 
@@ -41,6 +42,13 @@ if (calculator) {
   };
   calculator.addEventListener("input", updatePrice);
   updatePrice();
+}
+
+if (contactSection && "IntersectionObserver" in window) {
+  const contactObserver = new IntersectionObserver((entries) => {
+    document.body.classList.toggle("at-contact", entries.some((entry) => entry.isIntersecting));
+  }, { threshold: 0.12 });
+  contactObserver.observe(contactSection);
 }
 
 const reviewSlider = document.querySelector("[data-review-slider]");
